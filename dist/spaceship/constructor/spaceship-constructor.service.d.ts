@@ -1,0 +1,30 @@
+import { Model } from 'mongoose';
+import { SpaceshipBodyDocument } from '../detail/body/spaceship-body.schema';
+import { SpaceshipFuelTankDocument } from '../detail/fuel-tank/spaceship-fuel-tank.schema';
+import { SpaceshipScannerDocument } from '../detail/scanner/spaceship-scanner.schema';
+import { SpaceshipThrusterDocument } from '../detail/thruster/spaceship-thruster.schema';
+import { Spaceship } from './speceship.interface';
+export declare class SpaceshipConstructorService {
+    private _bodyModel;
+    private _fuelTankModel;
+    private _scannerModel;
+    private _thrusterModel;
+    constructor(_bodyModel: Model<SpaceshipBodyDocument>, _fuelTankModel: Model<SpaceshipFuelTankDocument>, _scannerModel: Model<SpaceshipScannerDocument>, _thrusterModel: Model<SpaceshipThrusterDocument>);
+    constructSpaceshipList(weightLimit: number, priceLimit: number, distanceLimit: number, count: number): Promise<Spaceship[]>;
+    private _findSpaceshipIndexationList;
+    private _bodyInnerJoinScanner;
+    private _findMinBodyWeight;
+    private _findMinFuelTankWeight;
+    private _findMinScannerWeight;
+    private _findMinThrusterWeight;
+    private _findMinBodyPrice;
+    private _findMinFuelTankPrice;
+    private _findMinScannerPrice;
+    private _findMinThrusterPrice;
+    private _findSpaceship;
+    initiation(count: number): Promise<void>;
+    private _createBody;
+    private _createFuelTank;
+    private _createScanner;
+    private _createThruster;
+}
