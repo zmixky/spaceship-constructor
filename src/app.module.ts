@@ -4,11 +4,11 @@ import { SpaceshipModule } from './spaceship/spaceship.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-const DB_URL = 'mongodb+srv://spaceship-constructor:FKbZXzS85SwRuSB4@internalcluster.gmobmpr.mongodb.net/?retryWrites=true&w=majority'; //todo: move to .env
+const mongodb_url = process.env.MONGODB_URL;
 
 @Module({
   imports: [
-    MongooseModule.forRoot(DB_URL),
+    MongooseModule.forRoot(String(mongodb_url)),
     SpaceshipModule,
   ],
   controllers: [AppController],
